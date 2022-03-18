@@ -63,16 +63,19 @@ main.append(newArticle);
 
 const navMenu = `
   <ul class="navList">
-    <li>Home</li>
-    <li>Backpacks</li>
-    <li>Shop</li>
-    <li>Specs</li>
-    <li>Carry</li>
+    <li> <a href="#"> Home </a> </li>
+    <li> <a href="#"> Backpacks </a> </li>
+    <li> <a href="#"> Shop </a> </li>
+    <li> <a href="#"> Specs </a> </li>
+    <li> <a href="#"> Carry </a> </li>
   </ul>
 `;
 
 const navMenuElement = document.createElement("nav");
 navMenuElement.innerHTML = navMenu;
-main.prepend(navMenuElement);
+document.querySelector(".siteheader").append(navMenuElement);
 document.querySelector(".navList").style.display = "flex";
-document.querySelector(".navList").style.justifyContent = "space-evenly";
+document.querySelectorAll(".navList li").forEach(item => {
+  item.style.padding = "3vw"; 
+  item.style.listStyle = "none"
+});
