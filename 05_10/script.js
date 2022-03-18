@@ -60,3 +60,19 @@ newArticle.setAttribute("id", "everyday");
 newArticle.innerHTML = content;
 
 main.append(newArticle);
+
+const navMenu = `
+  <ul class="navList">
+    <li>Home</li>
+    <li>Backpacks</li>
+    <li>Shop</li>
+    <li>Specs</li>
+    <li>Carry</li>
+  </ul>
+`;
+
+const navMenuElement = document.createElement("nav");
+navMenuElement.innerHTML = navMenu;
+main.prepend(navMenuElement);
+document.querySelector(".navList").style.display = "flex";
+document.querySelector(".navList").style.justifyContent = "space-evenly";
