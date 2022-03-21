@@ -12,6 +12,7 @@
  *  - Adds <figcaption> element with image description
  *  - Returns <figure> element to where function is called
  */
+const mainContainer = document.querySelector("main");
 
 const frogpack = {
   name: "Frog Backpack",
@@ -24,6 +25,8 @@ const frogpack = {
   },
   lidOpen: false,
   image: "../../assets/images/frog.svg",
+  description:
+    "A green kids backpack designed to make the lid look like the face of a frog sticking out its tongue.",
   toggleLid: function (lidStatus) {
     this.lidOpen = lidStatus;
   },
@@ -35,6 +38,7 @@ const frogpack = {
 
 // Baseline HTML output
 const content = `
+  <div>
     <h1 class="backpack__name">${frogpack.name}</h1>
     <ul class="backpack__features">
       <li class="packprop backpack__volume">Volume:<span> ${
@@ -56,4 +60,29 @@ const content = `
         frogpack.lidOpen ? "open" : "closed"
       }</span></li>
     </ul>  
+  </div>  
 `;
+
+//Main function that creates the article and fills in with content from above
+const createArticle = (backpack) => {
+  const articleContainer = document.createElement("article");
+  articleContainer.innerHTML = content;
+  articleContainer.prepend(createFigure(backpack));
+  articleContainer.style.display = "flex";
+  articleContainer.style.justifyContent = "center";
+  articleContainer.style.alignItems = "center";
+  return articleContainer;  
+}
+
+//Helper function that creates
+const createFigure = (backpack) => {
+  const figureContainer = document.createElement("figure");
+  figureContainer.style.width = "200";
+  figureContainer.innerHTML = `
+  <img src="${backpack.image}" width="200" height="200">
+  <figcaption> ${backpack.description}<figcaption>
+  `
+  return figureContainer;
+}
+
+mainContainer.append(createArticle(frogpack));
