@@ -68,3 +68,10 @@ const backpackList = backpackObjectArray.map((backpackObject) =>{
 backpackList.forEach((backpack) =>{
   main.append(backpack);
 })
+
+const myArray = [1, 2, 3, 4]
+myArray.forEach( (item, index) => {
+    myArray[index] = ++item;
+});
+
+console.log(myArray)

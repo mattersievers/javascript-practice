@@ -16,6 +16,12 @@ body {
   border-radius: 0.5rem;
 }
 
+.highlightGrid{
+  background-color: rgba(125,125,125,0.75);
+  border: 1px solid white;
+  box-shadow: -2px 2px rgba(25,25,25,0.75);;
+}
+
 .cell {
   display: block;
   width: 6rem;

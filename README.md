@@ -1,5 +1,5 @@
 # JavaScript Essential Training Course Completed Files
-This is the repository for the LinkedIn Learning course JavaScript Essential Training. The full course is available from [LinkedIn Learning][lil-course-url].
+This repository contains completed files from the LinkedIn Learning course JavaScript Essential Training. The full course and materials are available from [LinkedIn Learning][lil-course-url].
 
 ![JavaScript Essential Training][lil-thumbnail-url] 
 
@@ -16,7 +16,7 @@ This repository contains completed files from the course with all challenges and
    - [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 2. From the root folder, open the terminal and enter the command `nmp install` to install dependencies.
 
-### Instructor
+### Course Instructor
 
 **Morten Rand-Hendriksen**
 
@@ -26,3 +26,8 @@ Check out his other courses on [LinkedIn Learning](https://www.linkedin.com/lear
 
 [lil-course-url]: https://www.linkedin.com/learning/javascript-essential-training
 [lil-thumbnail-url]: https://cdn.lynda.com/course/2832077/2832077-1610728160487-16x9.jpg
+
+## Questions
+As a fellow peer in programming, feel free to reach out to me with any JavaScript related questions.
+  - [Github for mattersievers](http://www.github.com/mattersievers)
+  - For further questions, contact me through email at mattersievers@gmail.com

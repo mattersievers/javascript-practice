@@ -112,3 +112,14 @@ const main = document.querySelector(".maincontent");
 backpackList.forEach((backpack) => {
   main.append(backpack);
 });
+
+//Event listener for submitting strap length form
+//query selector grabs the strap information and form
+const strapLengths = document.querySelectorAll(".backpack__strap");
+strapLengths.forEach((strap)=>{
+  //event listener for the button on the form
+  strap.querySelector("form button").addEventListener("click", (event)=>{
+    event.preventDefault();
+    console.log(strap.querySelector("form input").value);
+  })
+})
