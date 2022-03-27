@@ -92,19 +92,23 @@ backpackList.forEach((backpack) => {
   main.append(backpack);
 });
 
-//selecting the strap length
+//selecting the strap length content
 const strapLengths = document.querySelectorAll(".backpack__strap");
 strapLengths.forEach((strap)=>{
-  let lengthForm = document.createElement("form");
+  //cycle through the strap lengths and add a form to each
+  const lengthForm = document.createElement("form");
+  const side = strap.getAttribute("data-side");
   lengthForm.innerHTML = `
-  <input type="number" id="newLength"/>
+  <input type="number" id="new${side}length" placeholder="New ${side} length"/>
   <button>Change</button>
   `
   strap.append(lengthForm);
 
-  strap.querySelector("form button").addEventListener("click", (event)=>{
+  //add an event listener to the button to update the amount in the span with the amount in the input
+  lengthForm.addEventListener("submit", (event)=>{
     event.preventDefault();
-    let input = strap.querySelector("form input").value;
+    const input = lengthForm.querySelector(`input`).value;
+    strap.get
     if(input == 1){
       strap.querySelector("span").innerHTML = `${input} inch`;
     }

@@ -55,6 +55,22 @@ const newStrapLength = (strapArray) => {
 
     // Add form to the end of the list element
     listElement.append(lengthForm);
+
+    //Event listener for strap length form
+    listElement.querySelector("form button").addEventListener("click", (event)=>{
+      event.preventDefault();
+      let input = listElement.querySelector("form input").value;
+      if(input == 1){
+        listElement.querySelector("span").innerHTML = `${input} inch`;
+      }
+      else if (input > 1) {
+        listElement.querySelector("span").innerHTML = `${input} inches`;
+      } else{
+        let incorrect = document.createElement("div");
+        incorrect.innerHTML = "Please check the number and try again."
+        listElement.querySelector("span").append(incorrect);
+      }
+    })
   });
 };
 
@@ -112,24 +128,3 @@ const main = document.querySelector(".maincontent");
 backpackList.forEach((backpack) => {
   main.append(backpack);
 });
-
-//Event listener for submitting strap length form
-//query selector grabs the strap information and form
-const strapLengths = document.querySelectorAll(".backpack__strap");
-strapLengths.forEach((strap)=>{
-  //event listener for the button on the form
-  strap.querySelector("form button").addEventListener("click", (event)=>{
-    event.preventDefault();
-    let input = strap.querySelector("form input").value;
-    if(input == 1){
-      strap.querySelector("span").innerHTML = `${input} inch`;
-    }
-    else if (input > 1) {
-      strap.querySelector("span").innerHTML = `${input} inches`;
-    } else{
-      let incorrect = document.createElement("div");
-      incorrect.innerHTML = "Please check the number and try again."
-      strap.querySelector("span").append(incorrect);
-    }
-  })
-})
