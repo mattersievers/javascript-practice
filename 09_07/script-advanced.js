@@ -91,3 +91,29 @@ const main = document.querySelector(".maincontent");
 backpackList.forEach((backpack) => {
   main.append(backpack);
 });
+
+//selecting the strap length
+const strapLengths = document.querySelectorAll(".backpack__strap");
+strapLengths.forEach((strap)=>{
+  let lengthForm = document.createElement("form");
+  lengthForm.innerHTML = `
+  <input type="number" id="newLength"/>
+  <button>Change</button>
+  `
+  strap.append(lengthForm);
+
+  strap.querySelector("form button").addEventListener("click", (event)=>{
+    event.preventDefault();
+    let input = strap.querySelector("form input").value;
+    if(input == 1){
+      strap.querySelector("span").innerHTML = `${input} inch`;
+    }
+    else if (input > 1) {
+      strap.querySelector("span").innerHTML = `${input} inches`;
+    } else{
+      let incorrect = document.createElement("div");
+      incorrect.innerHTML = "Please check the number and try again."
+      strap.querySelector("span").append(incorrect);
+    }
+  })
+});
